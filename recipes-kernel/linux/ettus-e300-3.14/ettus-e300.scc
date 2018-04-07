@@ -1,3 +1,4 @@
+patch 0001-Add-e300-device-tree-files.patch
 patch 0001-power-reset-Backport-syscon-poweroff.patch
 patch 0004-Input-add-support-for-NI-Ettus-Research-USRP-E3x0-bu.patch
 patch 0006-char-xilinx_xdevcfg-Added-a-notifier-interface.patch

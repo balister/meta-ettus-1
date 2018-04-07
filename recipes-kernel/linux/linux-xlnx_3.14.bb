@@ -1,5 +1,5 @@
 # Kernel version and SRCREV correspond to: xlnx_3.14 branch
-LINUX_VERSION = "3.14"
+LINUX_VERSION = "3.14.2"
 SRCREV ?= "2b48a8aeea7367359f9eebe55c4a09a05227f32b"
 
 include linux-xlnx.inc
@@ -10,6 +10,8 @@ SRC_URI_append += " \
 		file://tty-xuartps-Fix-RX-hang-and-TX-corruption-in-set_termios.patch \
 		file://kernel-add-support-for-gcc-5.patch \
 		file://kernel-use-the-gnu89-standard-explicitly.patch \
+                file://add-support-for-gcc7.patch \
+                file://genksyms_fix_typeof_handling.patch \
 		"
 
 # This kernel's Zynq USB driver cannot handle a seperate USB PHY device.

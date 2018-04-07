@@ -2,7 +2,16 @@
 #@Name: Ettus Research E3XX.
 #@DESCRIPTION: Machine configuration for the Ettus Research E3XX Software Radio.
 
+PREFERRED_PROVIDER_virtual/kernel ?= "linux-xlnx"
+PREFERRED_VERSION_linux-xlnx ?= "3.14%"
+
 require ettus-zynq.inc
+require conf/machine/include/machine-xilinx-default.inc
+require conf/machine/include/machine-xilinx-board.inc
+
+# KMACHINE
+KMACHINE ?= "zynq"
+KERNEL_EXTRA_ARGS_ettus-e300 = "UIMAGE_LOADADDR=0x8000"
 
 MACHINEOVERRIDES = "ettus-e300:${MACHINE}"
 
@@ -17,4 +26,4 @@ MACHINE_EXTRA_RRECOMMENDS = "kernel-modules acpid rtimulib rtimulib-conf \
                              gpsd gps-config gpsd-gpsctl gps-utils \
                             "
 
-IMAGE_BOOT_FILES += "fpga.bin"
+IMAGE_BOOT_FILES += "boot.bin fpga.bin"
