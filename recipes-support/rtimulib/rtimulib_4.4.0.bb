@@ -12,17 +12,22 @@ SRCREV = "fe59096a7a3c96a4465be3dec39e059b23469e2a"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "qt4-x11-free"
+inherit cmake qt4x11
 
-EXTRA_OECMAKE = " \
-                 -DQT_HEADERS_DIR=${STAGING_INCDIR}/qt4 \
-                 -DQT_QTCORE_INCLUDE_DIR=${STAGING_INCDIR}/qt4/QtCore \
-                 -DQT_LIBRARY_DIR=${STAGING_LIBDIR} \
-                 -DQT_QTCORE_LIBRARY_RELEASE=${STAGING_LIBDIR}/libQtCore.so \
-                 -DQT_QTGUI_LIBRARY_RELEASE=${STAGING_LIBDIR}/libQtGui.so \
-                "
+export EXTRA_OECMAKE = "-DQT_QMAKE_EXECUTABLE=${OE_QMAKE_QMAKE} \
+                        -DQT_LRELEASE_EXECUTABLE=${OE_QMAKE_LRELEASE} \
+                        -DQT_MOC_EXECUTABLE=${OE_QMAKE_MOC} \
+                        -DQT_UIC_EXECUTABLE=${OE_QMAKE_UIC} \
+                        -DQT_RCC_EXECUTABLE=${OE_QMAKE_RCC} \
+                        -DQT_LIBRARY_DIR=${OE_QMAKE_LIBDIR_QT} \
+                        -DQT_HEADERS_DIR=${OE_QMAKE_INCDIR_QT} \
+                        -DQT_QTCORE_INCLUDE_DIR=${OE_QMAKE_INCDIR_QT}/QtCore \
+                        "
 
-inherit cmake 
+do_configure() {
+	# Ensure we get the cmake configure and not qmake
+	cmake_do_configure
+}
 
 do_install_append() {
 	install -d ${D}/${sysconfdir}
