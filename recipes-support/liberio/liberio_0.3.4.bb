@@ -17,6 +17,8 @@ SRC_URI = "git://github.com/EttusResearch/liberio.git;rev=d0e8a603f5f4dddf29764f
 FILES_${PN} = "${libdir}/lib*.so.* ${libdir}/lib*.la ${libdir}/liberio.pc"
 FILES_${PN}-dev += "${includedir}/liberio/"
 
+TARGET_CC_ARCH += "-pthread"
+
 do_install_append() {
 	rm ${D}/${bindir} -r
 }
