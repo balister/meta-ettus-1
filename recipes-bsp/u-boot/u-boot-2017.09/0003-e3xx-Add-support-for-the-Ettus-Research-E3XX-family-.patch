@@ -1,4 +1,4 @@
-From 500fababaae07da6345f7e281bf9b6060473b5b9 Mon Sep 17 00:00:00 2001
+From 6f7066039703ddd35e197696797e4a46ee2d4f28 Mon Sep 17 00:00:00 2001
 From: Philip Balister <philip@opensdr.com>
 Date: Fri, 28 Oct 2016 15:28:04 -0400
 Subject: [PATCH 3/3] e3xx: Add support for the Ettus Research E3XX family of
@@ -6,16 +6,19 @@ Subject: [PATCH 3/3] e3xx: Add support for the Ettus Research E3XX family of
 
 Signed-off-by: Philip Balister <philip@opensdr.com>
 ---
- arch/arm/mach-zynq/Kconfig         |  20 +-
+ arch/arm/dts/zynq-e3xx-3.dts       |   3 +
+ arch/arm/mach-zynq/Kconfig         |  17 +-
  board/ettus/e3xx/Makefile          |  24 +++
- board/ettus/e3xx/board.c           | 415 +++++++++++++++++++++++++++++++++++++
+ board/ettus/e3xx/board.c           | 392 +++++++++++++++++++++++++++++++++++++
  board/ettus/e3xx/xil_io.h          |  13 ++
- configs/zynq_e3xx_1_defconfig      |  14 ++
- configs/zynq_e3xx_3_defconfig      |  14 ++
- include/configs/zynq_e3xx_1.h      |  30 +++
- include/configs/zynq_e3xx_3.h      |  31 +++
- include/configs/zynq_e3xx_common.h |  58 ++++++
- 9 files changed, 617 insertions(+), 2 deletions(-)
+ common/spl/spl_fat.c               |   2 +
+ configs/zynq_e3xx_1_defconfig      |  32 +++
+ configs/zynq_e3xx_3_defconfig      |  48 +++++
+ include/configs/zynq_e3xx_1.h      |  20 ++
+ include/configs/zynq_e3xx_3.h      |  21 ++
+ include/configs/zynq_e3xx_common.h |  57 ++++++
+ scripts/config_whitelist.txt       |   3 +
+ 12 files changed, 629 insertions(+), 3 deletions(-)
  create mode 100644 board/ettus/e3xx/Makefile
  create mode 100644 board/ettus/e3xx/board.c
  create mode 100644 board/ettus/e3xx/xil_io.h
@@ -25,54 +28,72 @@ Signed-off-by: Philip Balister <philip@opensdr.com>
  create mode 100644 include/configs/zynq_e3xx_3.h
  create mode 100644 include/configs/zynq_e3xx_common.h
 
+diff --git a/arch/arm/dts/zynq-e3xx-3.dts b/arch/arm/dts/zynq-e3xx-3.dts
+index ad03659871..e4a5995983 100644
+--- a/arch/arm/dts/zynq-e3xx-3.dts
++++ b/arch/arm/dts/zynq-e3xx-3.dts
+@@ -21,6 +21,7 @@
+ 	aliases {
+ 		ethernet0 = &gem0;
+ 		serial0 = &uart0;
++		mmc0 = &sdhci0;
+ 	};
+ 
+ 	memory {
+@@ -40,10 +41,12 @@
+ };
+ 
+ &sdhci0 {
++	u-boot,dm-pre-reloc;
+ 	status = "okay";
+ };
+ 
+ &uart0 {
++	u-boot,dm-pre-reloc;
+ 	status = "okay";
+ };
+ 
 diff --git a/arch/arm/mach-zynq/Kconfig b/arch/arm/mach-zynq/Kconfig
-index d396a13..593a1f4 100644
+index b9cd45ba09..8f910b78fc 100644
 --- a/arch/arm/mach-zynq/Kconfig
 +++ b/arch/arm/mach-zynq/Kconfig
-@@ -12,6 +12,12 @@ choice
- 	prompt "Xilinx Zynq board select"
- 	default TARGET_ZYNQ_ZC702
+@@ -35,19 +35,30 @@ config ZYNQ_DDRC_INIT
+ 	  if required. There might be cases like ddr less where we
+ 	  want to skip ddr init and this option is useful for it.
  
++
 +config TARGET_ETTUS_E3XX_1
-+	bool "NI Ettus Research USRP E3xx (Speedgrade 1)"
++       bool "NI Ettus Research USRP E3xx (Speedgrade 1)"
 +
 +config TARGET_ETTUS_E3XX_3
-+	bool "NI Ettus Research USRP E3xx (Speedgrade 3)"
++       bool "NI Ettus Research USRP E3xx (Speedgrade 3)"
 +
- config TARGET_ZYNQ_ZED
- 	bool "Zynq ZedBoard"
- 
-@@ -37,15 +43,25 @@ config TARGET_ZYNQ_ZYBO
- endchoice
- 
  config SYS_BOARD
 -	default "zynq"
-+	default "zynq" if TARGET_ZYNQ_ZED || TARGET_ZYNQ_MICROZED \
-+				  || TARGET_ZYNQ_PICOZED || TARGET_ZYNQ_ZC702 \
-+				  || TARGET_ZYNQ_ZC706 || TARGET_ZYNQ_ZC70X \
-+				  || TARGET_ZYNQ_ZC770
++	default "zynq" if !(TARGET_ETTUS_E3XX_1 || TARGET_ETTUS_E3XX_3)
 +	default "e3xx" if TARGET_ETTUS_E3XX_1 || TARGET_ETTUS_E3XX_3
  
  config SYS_VENDOR
+ 	string "Vendor name"
 -	default "xilinx"
-+	default "xilinx" if TARGET_ZYNQ_ZED || TARGET_ZYNQ_MICROZED \
-+				  || TARGET_ZYNQ_PICOZED || TARGET_ZYNQ_ZC702 \
-+				  || TARGET_ZYNQ_ZC706 || TARGET_ZYNQ_ZC70X \
-+				  || TARGET_ZYNQ_ZC770
++	default "xilinx" if !(TARGET_ETTUS_E3XX_1 || TARGET_ETTUS_E3XX_3)
 +	default "ettus" if TARGET_ETTUS_E3XX_1 || TARGET_ETTUS_E3XX_3
  
  config SYS_SOC
  	default "zynq"
  
  config SYS_CONFIG_NAME
+ 	string "Board configuration name"
+-	default "zynq-common"
 +	default "zynq_e3xx_1" if TARGET_ETTUS_E3XX_1
 +	default "zynq_e3xx_3" if TARGET_ETTUS_E3XX_3
- 	default "zynq_zed" if TARGET_ZYNQ_ZED
- 	default "zynq_microzed" if TARGET_ZYNQ_MICROZED
- 	default "zynq_picozed" if TARGET_ZYNQ_PICOZED
++	default "zynq-common" if !(TARGET_ETTUS_E3XX_1 || TARGET_ETTUS_E3XX_3)
+ 	help
+ 	  This option contains information about board configuration name.
+ 	  Based on this option include/configs/<CONFIG_SYS_CONFIG_NAME>.h header
 diff --git a/board/ettus/e3xx/Makefile b/board/ettus/e3xx/Makefile
 new file mode 100644
-index 0000000..bdd194f
+index 0000000000..bdd194f553
 --- /dev/null
 +++ b/board/ettus/e3xx/Makefile
 @@ -0,0 +1,24 @@
@@ -102,10 +123,10 @@ index 0000000..bdd194f
 +CFLAGS_ps7_init_gpl.o := -I$(srctree)/$(src)
 diff --git a/board/ettus/e3xx/board.c b/board/ettus/e3xx/board.c
 new file mode 100644
-index 0000000..cd1978c
+index 0000000000..95636e5544
 --- /dev/null
 +++ b/board/ettus/e3xx/board.c
-@@ -0,0 +1,415 @@
+@@ -0,0 +1,392 @@
 +/*
 + * (C) Copyright 2012 Michal Simek <monstr@monstr.eu>
 + * (C) Copyright 2015 Moritz Fischer <moritz.fischer@ettus.com>
@@ -308,39 +329,39 @@ index 0000000..cd1978c
 +	} else {
 +		speedgrade = 0;
 +		printf("*** Found unknown motherboard, please update sd card ***\n");
-+		setenv("devicetree_image", "uImage-zynq-e3xx-factory.dtb");
++		env_set("devicetree_image", "uImage-zynq-e3xx-factory.dtb");
 +	}
 +
 +	/* print out daughterboard info and select correct image */
 +	if (speedgrade == 1) {
 +		if (db == DB_ID_E310) {
-+			setenv("devicetree_image", "uImage-zynq-e31x-1.dtb");
++			env_set("devicetree_image", "uImage-zynq-e31x-1.dtb");
 +			printf("DB: Found E310 MIMO XCVR Rev%c\n",
 +			       num_to_letter_rev(db_rev));
 +			board_set_db_mux_gpio(1, 0);
 +		} else if (db == DB_ID_E330) {
-+			setenv("devicetree_image", "uImage-zynq-e33x-1.dtb");
++			env_set("devicetree_image", "uImage-zynq-e33x-1.dtb");
 +			printf("DB: Found E330 MIMO RCVR Rev%c\n",
 +			       num_to_letter_rev(db_rev));
 +			board_set_db_mux_gpio(1, 1);
 +		} else {
-+			setenv("devicetree_image", "uImage-zynq-e3xx-factory.dtb");
++			env_set("devicetree_image", "uImage-zynq-e3xx-factory.dtb");
 +			printf("*** Found unknown daughterboard, 0x%04x please update sd card ***\n", db);
 +			board_set_db_mux_gpio(0, 0);
 +		}
 +	} else if (speedgrade == 3) {
 +		if (db == DB_ID_E310) {
-+			setenv("devicetree_image", "uImage-zynq-e31x-3.dtb");
++			env_set("devicetree_image", "uImage-zynq-e31x-3.dtb");
 +			printf("DB: Found E310 MIMO XCVR Rev%c\n",
 +			       num_to_letter_rev(db_rev));
 +			board_set_db_mux_gpio(1, 0);
 +		} else if (db == DB_ID_E330) {
-+			setenv("devicetree_image", "uImage-zynq-e33x-3.dtb");
++			env_set("devicetree_image", "uImage-zynq-e33x-3.dtb");
 +			printf("DB: Found E330 MIMO RCVR Rev%c\n",
 +			       num_to_letter_rev(db_rev));
 +			board_set_db_mux_gpio(1, 1);
 +		} else {
-+			setenv("devicetree_image", "uImage-zynq-e3xx-factory.dtb");
++			env_set("devicetree_image", "uImage-zynq-e3xx-factory.dtb");
 +			printf("*** Found unknown daughterboard, 0x%04x please update sd card ***\n", db);
 +			board_set_db_mux_gpio(0, 0);
 +		}
@@ -350,7 +371,7 @@ index 0000000..cd1978c
 +	sprintf(mstr, "%0X:%0X:%0X:%0X:%0X:%0X", mb_map->mac_addr[0],
 +		mb_map->mac_addr[1], mb_map->mac_addr[2], mb_map->mac_addr[3],
 +		mb_map->mac_addr[4], mb_map->mac_addr[5]);
-+	setenv("ethaddr", mstr);
++	env_set("ethaddr", mstr);
 +}
 +
 +
@@ -402,16 +423,16 @@ index 0000000..cd1978c
 +
 +	switch ((zynq_slcr_get_boot_mode()) & ZYNQ_BM_MASK) {
 +	case ZYNQ_BM_NOR:
-+		setenv("modeboot", "norboot");
++		env_set("modeboot", "norboot");
 +		break;
 +	case ZYNQ_BM_SD:
-+		setenv("modeboot", "sdboot");
++		env_set("modeboot", "sdboot");
 +		break;
 +	case ZYNQ_BM_JTAG:
-+		setenv("modeboot", "jtagboot");
++		env_set("modeboot", "jtagboot");
 +		break;
 +	default:
-+		setenv("modeboot", "");
++		env_set("modeboot", "");
 +		break;
 +	}
 +
@@ -424,7 +445,7 @@ index 0000000..cd1978c
 +		       CONFIG_ZYNQ_E3XX_MEM_TEST_SIZE);
 +	if (err) {
 +		printf("FAILED RAM TEST!\n");
-+		setenv("bootdelay", "-1");
++		env_set("bootdelay", "-1");
 +	} else {
 +		printf("PASSED RAM TEST!\n");
 +	}
@@ -441,59 +462,7 @@ index 0000000..cd1978c
 +}
 +#endif
 +
-+int board_eth_init(bd_t *bis)
-+{
-+	u32 ret = 0;
-+
-+#ifdef CONFIG_XILINX_AXIEMAC
-+	ret |= xilinx_axiemac_initialize(bis, XILINX_AXIEMAC_BASEADDR,
-+						XILINX_AXIDMA_BASEADDR);
-+#endif
-+#ifdef CONFIG_XILINX_EMACLITE
-+	u32 txpp = 0;
-+	u32 rxpp = 0;
-+# ifdef CONFIG_XILINX_EMACLITE_TX_PING_PONG
-+	txpp = 1;
-+# endif
-+# ifdef CONFIG_XILINX_EMACLITE_RX_PING_PONG
-+	rxpp = 1;
-+# endif
-+	ret |= xilinx_emaclite_initialize(bis, XILINX_EMACLITE_BASEADDR,
-+			txpp, rxpp);
-+#endif
-+
-+#if defined(CONFIG_ZYNQ_GEM)
-+# if defined(CONFIG_ZYNQ_GEM0)
-+	ret |= zynq_gem_initialize(bis, ZYNQ_GEM_BASEADDR0,
-+				   CONFIG_ZYNQ_GEM_PHY_ADDR0,
-+				   CONFIG_ZYNQ_GEM_EMIO0);
-+# endif
-+# if defined(CONFIG_ZYNQ_GEM1)
-+	ret |= zynq_gem_initialize(bis, ZYNQ_GEM_BASEADDR1,
-+				   CONFIG_ZYNQ_GEM_PHY_ADDR1,
-+				   CONFIG_ZYNQ_GEM_EMIO1);
-+# endif
-+#endif
-+	return ret;
-+}
-+
-+#ifdef CONFIG_CMD_MMC
-+int board_mmc_init(bd_t *bd)
-+{
-+	int ret = 0;
-+
-+#if defined(CONFIG_ZYNQ_SDHCI)
-+# if defined(CONFIG_ZYNQ_SDHCI0)
-+	ret = zynq_sdhci_init(ZYNQ_SDHCI_BASEADDR0);
-+# endif
-+# if defined(CONFIG_ZYNQ_SDHCI1)
-+	ret |= zynq_sdhci_init(ZYNQ_SDHCI_BASEADDR1);
-+# endif
-+#endif
-+	return ret;
-+}
-+#endif
-+
++#if 0
 +int dram_init(void)
 +{
 +#if CONFIG_IS_ENABLED(OF_CONTROL)
@@ -521,9 +490,38 @@ index 0000000..cd1978c
 +
 +	return 0;
 +}
++#endif
++
++#if !defined(CONFIG_SYS_SDRAM_BASE) && !defined(CONFIG_SYS_SDRAM_SIZE)
++int dram_init_banksize(void)
++{
++	fdtdec_setup_memory_banksize();
++
++	return 0;
++}
++
++int dram_init(void)
++{
++	if (fdtdec_setup_memory_size() != 0)
++		return -EINVAL;
++
++	zynq_ddrc_init();
++
++	return 0;
++}
++#else
++int dram_init(void)
++{
++	gd->ram_size = CONFIG_SYS_SDRAM_SIZE;
++
++	zynq_ddrc_init();
++
++	return 0;
++}
++#endif
 diff --git a/board/ettus/e3xx/xil_io.h b/board/ettus/e3xx/xil_io.h
 new file mode 100644
-index 0000000..1eccf8d
+index 0000000000..1eccf8d91d
 --- /dev/null
 +++ b/board/ettus/e3xx/xil_io.h
 @@ -0,0 +1,13 @@
@@ -540,12 +538,25 @@ index 0000000..1eccf8d
 + */
 +
 +#endif /* XIL_IO_H */
+diff --git a/common/spl/spl_fat.c b/common/spl/spl_fat.c
+index 60b85f082d..15254ec0ed 100644
+--- a/common/spl/spl_fat.c
++++ b/common/spl/spl_fat.c
+@@ -91,6 +91,8 @@ int spl_load_image_fat(struct spl_image_info *spl_image,
+ 				    (u8 *)(uintptr_t)spl_image->load_addr, 0);
+ 	}
+ 
++	printf("%s: error reading image %s, done!\n",
++	       __func__, filename);
+ end:
+ #ifdef CONFIG_SPL_LIBCOMMON_SUPPORT
+ 	if (err <= 0)
 diff --git a/configs/zynq_e3xx_1_defconfig b/configs/zynq_e3xx_1_defconfig
 new file mode 100644
-index 0000000..7cc725d
+index 0000000000..818c0f7dca
 --- /dev/null
 +++ b/configs/zynq_e3xx_1_defconfig
-@@ -0,0 +1,14 @@
+@@ -0,0 +1,32 @@
 +CONFIG_ARM=y
 +CONFIG_ARCH_ZYNQ=y
 +CONFIG_TARGET_ETTUS_E3XX_1=y
@@ -560,32 +571,84 @@ index 0000000..7cc725d
 +CONFIG_OF_EMBED=y
 +CONFIG_NET_RANDOM_ETHADDR=y
 +CONFIG_ZYNQ_SDHCI=y
++CONFIG_SYS_TEXT_BASE=0x4000000
++# CONFIG_DISPLAY_CPUINFO is not set
++CONFIG_ZYNQ_GEM=y
++CONFIG_ZYNQ_SERIAL=y
++# CONFIG_MTD_NOR_FLASH is not set
++# CONFIG_SPL_DOS_PARTITION is not set
++CONFIG_SUPPORT_VFAT=y
++CONFIG_FAT_WRITE=y
++CONFIG_ENV_IS_IN_FAT=y
++CONFIG_ENV_FAT_INTERFACE="mmc"
++CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
++CONFIG_ENV_FAT_FILE="uboot.env"
++CONFIG_CMD_USB=y
++CONFIG_USB=y
++CONFIG_USB_EHCI_HCD=y
++CONFIG_USB_ULPI_VIEWPORT=y
++CONFIG_USB_ULPI=y
++CONFIG_USB_STORAGE=y
 diff --git a/configs/zynq_e3xx_3_defconfig b/configs/zynq_e3xx_3_defconfig
 new file mode 100644
-index 0000000..10bca63
+index 0000000000..536f604b13
 --- /dev/null
 +++ b/configs/zynq_e3xx_3_defconfig
-@@ -0,0 +1,14 @@
+@@ -0,0 +1,48 @@
 +CONFIG_ARM=y
 +CONFIG_ARCH_ZYNQ=y
 +CONFIG_TARGET_ETTUS_E3XX_3=y
 +CONFIG_DEFAULT_DEVICE_TREE="zynq-e3xx-3"
++CONFIG_SYS_TEXT_BASE=0x4000000
 +CONFIG_SPL=y
++CONFIG_SPL_OS_BOOT=y
++CONFIG_SPL_DM_SEQ_ALIAS=y
++CONFIG_SPL_MMC_SUPPORT=y
++CONFIG_SPL_FAT_SUPPORT=y
 +CONFIG_FIT=y
 +CONFIG_FIT_VERBOSE=y
 +CONFIG_FIT_SIGNATURE=y
++CONFIG_HUSH_PARSER=y
++CONFIG_SYS_PROMPT="e3xx-sg3-uboot>"
 +# CONFIG_CMD_IMLS is not set
 +# CONFIG_CMD_FLASH is not set
++CONFIG_CMD_GPIO=y
++CONFIG_CMD_I2C=y
++CONFIG_CMD_MMC=y
++CONFIG_CMD_USB=y
 +# CONFIG_CMD_SETEXPR is not set
++CONFIG_CMD_TFTPPUT=y
++CONFIG_CMD_DHCP=y
++CONFIG_CMD_MII=y
++CONFIG_CMD_PING=y
++CONFIG_CMD_CACHE=y
++CONFIG_CMD_EXT2=y
++CONFIG_CMD_EXT4=y
++CONFIG_CMD_EXT4_WRITE=y
++CONFIG_CMD_FAT=y
++CONFIG_CMD_FS_GENERIC=y
++CONFIG_MMC_SDHCI=y
++CONFIG_MMC_SDHCI_ZYNQ=y
 +CONFIG_OF_EMBED=y
 +CONFIG_NET_RANDOM_ETHADDR=y
-+CONFIG_ZYNQ_SDHCI=y
++# CONFIG_DISPLAY_CPUINFO is not set
++CONFIG_ZYNQ_GEM=y
++CONFIG_ZYNQ_SERIAL=y
++# CONFIG_MTD_NOR_FLASH is not set
++CONFIG_ENV_FAT_INTERFACE="mmc"
++CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
++CONFIG_ENV_FAT_FILE="uboot.env"
++CONFIG_USB=y
++CONFIG_USB_EHCI_HCD=y
++CONFIG_USB_ULPI_VIEWPORT=y
++CONFIG_USB_ULPI=y
++CONFIG_USB_STORAGE=y
 diff --git a/include/configs/zynq_e3xx_1.h b/include/configs/zynq_e3xx_1.h
 new file mode 100644
-index 0000000..001daac
+index 0000000000..262c766875
 --- /dev/null
 +++ b/include/configs/zynq_e3xx_1.h
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,20 @@
 +/*
 + * (C) Copyright 2013 Xilinx, Inc.
 + * (C) Copyright 2015 National Instruments Corp
@@ -599,18 +662,8 @@ index 0000000..001daac
 +#ifndef __CONFIG_ZYNQ_E3XX_1_H
 +#define __CONFIG_ZYNQ_E3XX_1_H
 +
-+#define CONFIG_SYS_SDRAM_SIZE		(1024 * 1024 * 1024)
-+
-+#define CONFIG_ZYNQ_SERIAL_UART0
-+#define CONFIG_ZYNQ_GEM0
-+#define CONFIG_ZYNQ_GEM_PHY_ADDR0	7
-+
-+#define CONFIG_SYS_NO_FLASH
-+
-+#define CONFIG_ZYNQ_USB
 +#define CONFIG_ZYNQ_I2C0
 +#define CONFIG_ZYNQ_EEPROM
-+#define CONFIG_ZYNQ_BOOT_FREEBSD
 +
 +#include <configs/zynq-common.h>
 +#include <configs/zynq_e3xx_common.h>
@@ -618,10 +671,10 @@ index 0000000..001daac
 +#endif /* __CONFIG_ZYNQ_E3XX_1_H */
 diff --git a/include/configs/zynq_e3xx_3.h b/include/configs/zynq_e3xx_3.h
 new file mode 100644
-index 0000000..550ff1c
+index 0000000000..c7f4b4daf6
 --- /dev/null
 +++ b/include/configs/zynq_e3xx_3.h
-@@ -0,0 +1,31 @@
+@@ -0,0 +1,21 @@
 +/*
 + * (C) Copyright 2013 Xilinx, Inc.
 + * (C) Copyright 2015 National Instruments Corp
@@ -635,18 +688,8 @@ index 0000000..550ff1c
 +#ifndef __CONFIG_ZYNQ_E3XX_3_H
 +#define __CONFIG_ZYNQ_E3XX_3_H
 +
-+#define CONFIG_SYS_SDRAM_SIZE		(1024 * 1024 * 1024)
-+
-+#define CONFIG_ZYNQ_SERIAL_UART0
-+#define CONFIG_ZYNQ_GEM0
-+#define CONFIG_ZYNQ_GEM_PHY_ADDR0	7
-+
-+#define CONFIG_SYS_NO_FLASH
-+
-+#define CONFIG_ZYNQ_USB
 +#define CONFIG_ZYNQ_I2C0
 +#define CONFIG_ZYNQ_EEPROM
-+#define CONFIG_ZYNQ_BOOT_FREEBSD
 +
 +#include <configs/zynq-common.h>
 +#include <configs/zynq_e3xx_common.h>
@@ -655,10 +698,10 @@ index 0000000..550ff1c
 +#endif /* __CONFIG_ZYNQ_E3XX_3_H */
 diff --git a/include/configs/zynq_e3xx_common.h b/include/configs/zynq_e3xx_common.h
 new file mode 100644
-index 0000000..299dbc2
+index 0000000000..49a93fb6d5
 --- /dev/null
 +++ b/include/configs/zynq_e3xx_common.h
-@@ -0,0 +1,58 @@
+@@ -0,0 +1,57 @@
 +/*
 + * (C) Copyright 2015 National Instruments Corp
 + *
@@ -671,7 +714,7 @@ index 0000000..299dbc2
 +#define __CONFIG_ZYNQ_E3XX_COMMON_H
 +
 +#define CONFIG_ZYNQ_E3XX_MEM_TEST
-+#define CONFIG_ZYNQ_E3XX_MEM_TEST_START CONFIG_SYS_SDRAM_BASE
++#define CONFIG_ZYNQ_E3XX_MEM_TEST_START 0
 +#define CONFIG_ZYNQ_E3XX_MEM_TEST_SIZE 0x00001000
 +
 +/* we'll need to overridedefault zynq stuff */
@@ -715,8 +758,21 @@ index 0000000..299dbc2
 +		"fi\0" \
 +		DFU_ALT_INFO
 +
-+
 +#endif /* __CONFIG_ZYNQ_E3XX_COMMON_H */
+diff --git a/scripts/config_whitelist.txt b/scripts/config_whitelist.txt
+index 9ce0c3f039..d2e3278bae 100644
+--- a/scripts/config_whitelist.txt
++++ b/scripts/config_whitelist.txt
+@@ -5176,6 +5176,9 @@ CONFIG_ZLT
+ CONFIG_ZM7300
+ CONFIG_ZYNQMP_EEPROM
+ CONFIG_ZYNQMP_XHCI_LIST
++CONFIG_ZYNQ_E3XX_MEM_TEST
++CONFIG_ZYNQ_E3XX_MEM_TEST_SIZE
++CONFIG_ZYNQ_E3XX_MEM_TEST_START
+ CONFIG_ZYNQ_EEPROM
+ CONFIG_ZYNQ_EEPROM_BUS
+ CONFIG_ZYNQ_GEM_EEPROM_ADDR
 -- 
-2.7.4
+2.11.1
 
