@@ -13,6 +13,9 @@ require conf/machine/include/machine-xilinx-board.inc
 KMACHINE ?= "zynq"
 KERNEL_EXTRA_ARGS_ettus-e300 = "UIMAGE_LOADADDR=0x8000"
 
+KERNEL_CLASSES += "kernel-fitimage"
+KERNEL_IMAGETYPE = "fitImage"
+
 MACHINEOVERRIDES = "ettus-e300:${MACHINE}"
 
 MACHINE_FEATURES = "vfat ethernet alsa usbhost bluetooth ext2 wifi"

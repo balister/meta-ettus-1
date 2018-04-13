@@ -1,4 +1,4 @@
-From 6f7066039703ddd35e197696797e4a46ee2d4f28 Mon Sep 17 00:00:00 2001
+From c832058640ccc3b8a4cb29a9f68efa03c330592e Mon Sep 17 00:00:00 2001
 From: Philip Balister <philip@opensdr.com>
 Date: Fri, 28 Oct 2016 15:28:04 -0400
 Subject: [PATCH 3/3] e3xx: Add support for the Ettus Research E3XX family of
@@ -16,9 +16,9 @@ Signed-off-by: Philip Balister <philip@opensdr.com>
  configs/zynq_e3xx_3_defconfig      |  48 +++++
  include/configs/zynq_e3xx_1.h      |  20 ++
  include/configs/zynq_e3xx_3.h      |  21 ++
- include/configs/zynq_e3xx_common.h |  57 ++++++
+ include/configs/zynq_e3xx_common.h |  73 +++++++
  scripts/config_whitelist.txt       |   3 +
- 12 files changed, 629 insertions(+), 3 deletions(-)
+ 12 files changed, 645 insertions(+), 3 deletions(-)
  create mode 100644 board/ettus/e3xx/Makefile
  create mode 100644 board/ettus/e3xx/board.c
  create mode 100644 board/ettus/e3xx/xil_io.h
@@ -698,10 +698,10 @@ index 0000000000..c7f4b4daf6
 +#endif /* __CONFIG_ZYNQ_E3XX_3_H */
 diff --git a/include/configs/zynq_e3xx_common.h b/include/configs/zynq_e3xx_common.h
 new file mode 100644
-index 0000000000..49a93fb6d5
+index 0000000000..950b01eb47
 --- /dev/null
 +++ b/include/configs/zynq_e3xx_common.h
-@@ -0,0 +1,57 @@
+@@ -0,0 +1,73 @@
 +/*
 + * (C) Copyright 2015 National Instruments Corp
 + *
@@ -723,40 +723,56 @@ index 0000000000..49a93fb6d5
 +#endif
 +
 +#define CONFIG_EXTRA_ENV_SETTINGS	\
-+	"kernel_image=uImage\0"	\
-+	"kernel_load_address=0x2080000\0" \
++	"fit_image=fitImage\0"		\
 +	"load_addr=0x2000000\0"		\
-+	"devicetree_load_address=0x2000000\0"\
-+	"fdt_high=0x20000000\0"		\
++	"fit_size=0x800000\0"		\
++	"fdt_high=0xffffffff\0"		\
 +	"initrd_high=0x20000000\0"	\
++	"loadbootenv_addr=0x2000000\0" \
++	"fdt_addr_r=0x1f00000\0"        \
++	"pxefile_addr_r=0x2000000\0"    \
++	"kernel_addr_r=0x2000000\0"     \
++	"scriptaddr=0x3000000\0"        \
++	"ramdisk_addr_r=0x3100000\0"    \
 +	"loadbit_addr=0x100000\0"	\
 +	"loadbit_size=0x3dbafc\0"	\
 +	"bitstream_image=fpga.bin\0"	\
-+	"bootargs=root=/dev/mmcblk0p2 rootwait ro earlycon\0" \
 +	"bootenv=uEnv.txt\0" \
-+	"loadbootenv=load mmc 0 ${load_addr} ${bootenv}\0" \
-+	"importbootenv=echo Importing environment from mmc ...; " \
-+		"env import -t -r $load_addr $filesize\0" \
-+	"sdboot=echo Loading fpga image from SD to HW... && " \
-+		"load mmc 0 ${loadbit_addr} ${bitstream_image} && " \
-+		"fpga load 0 ${loadbit_addr} ${filesize}; " \
-+		"if run loadbootenv; then " \
-+			"echo Loaded environment from ${bootenv};" \
-+			"run importbootenv;" \
-+		"fi;" \
-+		"echo Copying kernel from SD to RAM... && " \
-+		"load mmc 0 ${kernel_load_address} ${kernel_image} && " \
-+		"load mmc 0 ${devicetree_load_address} ${devicetree_image} && " \
-+		"bootm ${kernel_load_address} - ${devicetree_load_address}\0" \
++	"bootenv_dev=mmc\0" \
++	"loadbootenv=load ${bootenv_dev} 0 ${loadbootenv_addr} ${bootenv}\0" \
++	"importbootenv=echo Importing environment from ${bootenv_dev} ...; " \
++		"env import -t ${loadbootenv_addr} $filesize\0" \
++	"bootenv_existence_test=test -e ${bootenv_dev} 0 /${bootenv}\0" \
++	"setbootenv=if env run bootenv_existence_test; then " \
++			"if env run loadbootenv; then " \
++				"env run importbootenv; " \
++			"fi; " \
++		"fi; \0" \
++	"sd_loadbootenv=set bootenv_dev mmc && " \
++			"run setbootenv \0" \
++	"usb_loadbootenv=set bootenv_dev usb && usb start && run setbootenv \0" \
++	"preboot=if test $modeboot = sdboot; then " \
++			"load mmc 0 ${loadbit_addr} ${bitstream_image} && " \
++			"fpga load 0 ${loadbit_addr} ${filesize}; " \
++			"run sd_loadbootenv; " \
++			"echo Checking if uenvcmd is set ...; " \
++			"if test -n $uenvcmd; then " \
++				"echo Running uenvcmd ...; " \
++				"run uenvcmd; " \
++			"fi; " \
++		"fi; \0" \
++	"sdboot=echo Copying FIT from SD to RAM... && " \
++		"load mmc 0 ${load_addr} ${fit_image} && " \
++		"bootm ${load_addr}\0" \
 +	"jtagboot=echo TFTPing FIT to RAM... && " \
 +		"tftpboot ${load_addr} ${fit_image} && " \
 +		"bootm ${load_addr}\0" \
 +	"usbboot=if usb start; then " \
 +			"echo Copying FIT from USB to RAM... && " \
 +			"load usb 0 ${load_addr} ${fit_image} && " \
-+			"bootm ${load_addr}\0" \
-+		"fi\0" \
-+		DFU_ALT_INFO
++			"bootm ${load_addr}; fi\0" \
++		DFU_ALT_INFO \
++		BOOTENV
 +
 +#endif /* __CONFIG_ZYNQ_E3XX_COMMON_H */
 diff --git a/scripts/config_whitelist.txt b/scripts/config_whitelist.txt
