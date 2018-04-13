@@ -28,7 +28,7 @@ LIC_FILES_CHKSUM += "file://${WORKDIR}/LICENSE.ec-sulfur;md5=72f855f00b364ec8bdc
 NO_GENERIC_LICENSE[Firmware-ni-sulfur] = "${WORKDIR}/LICENSE.ec-sulfur"
 LICENSE_${PN}-ni-sulfur = "Firmware-ni-sulfur"
 
-PACKAGES =+ " \
+PACKAGES_prepend_ni-sulfur = " \
     ${PN}-ni-sulfur-license \
     ${PN}-ni-sulfur \
     ${PN}-ni-magnesium \
