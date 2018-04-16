@@ -1,0 +1,10 @@
+define KFEATURE_DESCRIPTION "Enable support for e3xx"
+define KFEATURE_COMPATIBILITY board
+
+patch 0001-Add-e3xx-device-tree-for-xilinx-4.9-kernel.patch
+patch 0002-char-xilinx_xdevcfg-Added-a-notifier-interface.patch
+patch 0003-power-Add-support-for-NI-Ettus-Research-E3XX-PMU.patch
+patch 0004-regulator-e3xx-db-Adding-support-for-NI-USRP-E3XX-DB.patch
+patch 0005-char-xilinx_devcfg-Fix-regression.patch
+kconf hardware ettus-e300.cfg
+

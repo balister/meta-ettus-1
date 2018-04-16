@@ -1,0 +1,515 @@
+--- Starting bitbake server pid 16805 at 2018-04-14 15:32:19.621967 ---
+Started bitbake server pid 16805
+DEBUG: Found bblayers.conf (/srv/raid/code/sdr/e300-oe-build/build/conf/bblayers.conf)
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/meta
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e100-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e300-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/common
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-contrib
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-oe
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-networking
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-python
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-filesystems
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services/meta-openstack
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-sdr
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt5
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt4
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:740: including conf/abi_version.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:741: including conf/site.conf
+DEBUG: CONF file 'conf/site.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:742: including conf/auto.conf
+DEBUG: CONF file 'conf/auto.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:743: including conf/local.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:744: including conf/multiconfig/default.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:745: including conf/machine/ettus-e3xx-sg3.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e3xx-sg3.conf:1: including conf/machine/ettus-e300.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:8: including ettus-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-zynq.inc:6: including conf/machine/include/tune-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:4: including conf/machine/include/tune-cortexa9.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/tune-cortexa9.inc:3: including conf/machine/include/arm/arch-armv7a.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:8: including conf/machine/include/arm/arch-armv6.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv6.inc:8: including conf/machine/include/arm/arch-armv5-dsp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5-dsp.inc:4: including conf/machine/include/arm/arch-armv5.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:8: including conf/machine/include/arm/arch-armv4.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:15: including conf/machine/include/arm/arch-arm.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:16: including conf/machine/include/arm/feature-arm-thumb.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:9: including conf/machine/include/arm/feature-arm-vfp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:9: including conf/machine/include/arm/feature-arm-neon.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:5: including conf/machine/include/soc-family.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:18: including conf/machine/include/machine-xilinx-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:19: including conf/machine/include/machine-xilinx-board.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:746: including conf/machine-sdk/x86_64.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:747: including conf/distro/nodistro.conf
+DEBUG: CONF file 'conf/distro/nodistro.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:748: including conf/distro/defaultsetup.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:1: including conf/distro/include/default-providers.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:2: including conf/distro/include/default-versions.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:3: including conf/distro/include/default-distrovars.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:4: including conf/distro/include/world-broken.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:7: including conf/distro/include/tcmode-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/include/tcmode-default.inc:71: including conf/distro/include/as-needed.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:10: including conf/distro/include/tclibc-glibc.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:12: including conf/distro/include/uninative-flags.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:749: including conf/documentation.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:750: including conf/licenses.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:751: including conf/sanity.conf
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:4)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/terminal.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/staging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/mirrors.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:7)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utils.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:8)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utility-tasks.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:9)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/metadata_scm.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:10)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/logging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass:1)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/packagedata.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:41)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/chrpath.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:42)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/insane.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:45)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/buildstats.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/linuxloader.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/rm_work.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/debian.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/devshell.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sstate.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/license.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/remove-libtool.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/blacklist.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Clearing SRCREV cache due to cache policy of: clear
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/local_file_checksum_cache.dat'
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/bb_codeparser.dat'
+Entering server connection loop
+Accepting [<socket.socket fd=7, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=bitbake.sock>]
+Connecting Client
+Running command ['setFeatures', [2]]
+Running command ['updateConfig', {'dry_run': False, 'debug': 0, 'abort': True, 'prefile': [], 'postfile': [], 'invalidate_stamp': None, 'verbose': False, 'extra_assume_provided': [], 'debug_domains': [], 'profile': False, 'server_timeout': None, 'dump_signatures': [], 'force': False}, {'BB_ENV_EXTRAWHITE': 'ALL_PROXY BBPATH_EXTRA BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'SHLVL': '1', 'PATH': '/srv/raid/code/sdr/e300-oe-build/oe-core/scripts:/srv/raid/code/sdr/e300-oe-build/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SHELL': '/bin/bash', 'XDG_SESSION_COOKIE': '88a59bc10922466569b1836749f6f6e5-1523740890.184925-315014840', 'TERM': 'xterm-256color', 'BUILDDIR': '/srv/raid/code/sdr/e300-oe-build/build', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'PWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux/ettus-e300-2017.3', 'MAIL': '/var/mail/kurt', 'LC_ALL': 'en_US.UTF-8', 'XDG_SESSION_ID': '22908', 'HISTCONTROL': 'ignoreboth', 'LANG': 'en_US.UTF-8', 'BBPATH': '/srv/raid/code/sdr/e300-oe-build/build', 'OLDPWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux', 'SSH_CLIENT': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 22', 'SSH_TTY': '/dev/pts/0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'COMP_WORDBREAKS': ' \t\n"\'><;|&(:', 'SSH_CONNECTION': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 fe80::221:91ff:fe19:9a33%eth2 22', 'USER': 'kurt', 'HOME': '/home/kurt', '_': '/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'LOGNAME': 'kurt'}, ['/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'virtual/kernel']]
+Running command ['getVariable', 'BBINCLUDELOGS']
+Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+Running command ['getSetVariable', 'BB_CONSOLELOG']
+Running command ['getUIHandlerNum']
+Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+Running command ['getVariable', 'BB_DEFAULT_TASK']
+Running command ['setConfig', 'cmd', 'build']
+Running command ['buildTargets', ['virtual/kernel'], 'build']
+Connecting Client
+Disconnecting Client
+No timeout, exiting.
+Exiting
+--- Starting bitbake server pid 26030 at 2018-04-15 16:58:00.547536 ---
+Started bitbake server pid 26030
+DEBUG: Found bblayers.conf (/srv/raid/code/sdr/e300-oe-build/build/conf/bblayers.conf)
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/meta
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e100-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e300-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/common
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-contrib
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-oe
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-networking
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-python
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-filesystems
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services/meta-openstack
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-sdr
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt5
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt4
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:740: including conf/abi_version.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:741: including conf/site.conf
+DEBUG: CONF file 'conf/site.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:742: including conf/auto.conf
+DEBUG: CONF file 'conf/auto.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:743: including conf/local.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:744: including conf/multiconfig/default.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:745: including conf/machine/ettus-e3xx-sg3.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e3xx-sg3.conf:1: including conf/machine/ettus-e300.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:8: including ettus-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-zynq.inc:6: including conf/machine/include/tune-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:4: including conf/machine/include/tune-cortexa9.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/tune-cortexa9.inc:3: including conf/machine/include/arm/arch-armv7a.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:8: including conf/machine/include/arm/arch-armv6.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv6.inc:8: including conf/machine/include/arm/arch-armv5-dsp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5-dsp.inc:4: including conf/machine/include/arm/arch-armv5.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:8: including conf/machine/include/arm/arch-armv4.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:15: including conf/machine/include/arm/arch-arm.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:16: including conf/machine/include/arm/feature-arm-thumb.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:9: including conf/machine/include/arm/feature-arm-vfp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:9: including conf/machine/include/arm/feature-arm-neon.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:5: including conf/machine/include/soc-family.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:9: including conf/machine/include/machine-xilinx-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:10: including conf/machine/include/machine-xilinx-board.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:746: including conf/machine-sdk/x86_64.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:747: including conf/distro/nodistro.conf
+DEBUG: CONF file 'conf/distro/nodistro.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:748: including conf/distro/defaultsetup.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:1: including conf/distro/include/default-providers.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:2: including conf/distro/include/default-versions.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:3: including conf/distro/include/default-distrovars.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:4: including conf/distro/include/world-broken.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:7: including conf/distro/include/tcmode-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/include/tcmode-default.inc:71: including conf/distro/include/as-needed.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:10: including conf/distro/include/tclibc-glibc.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:12: including conf/distro/include/uninative-flags.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:749: including conf/documentation.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:750: including conf/licenses.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:751: including conf/sanity.conf
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:4)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/terminal.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/staging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/mirrors.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:7)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utils.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:8)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utility-tasks.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:9)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/metadata_scm.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:10)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/logging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass:1)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/packagedata.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:41)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/chrpath.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:42)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/insane.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:45)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/buildstats.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/linuxloader.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/rm_work.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/debian.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/devshell.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sstate.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/license.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/remove-libtool.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/blacklist.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Clearing SRCREV cache due to cache policy of: clear
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/local_file_checksum_cache.dat'
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/bb_codeparser.dat'
+Entering server connection loop
+Accepting [<socket.socket fd=7, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=bitbake.sock>]
+Connecting Client
+Running command ['setFeatures', [2]]
+Running command ['updateConfig', {'dump_signatures': [], 'abort': True, 'debug': 0, 'debug_domains': [], 'profile': False, 'invalidate_stamp': None, 'server_timeout': None, 'extra_assume_provided': [], 'prefile': [], 'force': False, 'dry_run': False, 'postfile': [], 'verbose': False}, {'BUILDDIR': '/srv/raid/code/sdr/e300-oe-build/build', 'SSH_TTY': '/dev/pts/0', 'HOME': '/home/kurt', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'BBPATH': '/srv/raid/code/sdr/e300-oe-build/build', 'LC_ALL': 'en_US.UTF-8', 'SSH_CLIENT': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 22', 'OLDPWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux', 'HISTCONTROL': 'ignoreboth', 'MAIL': '/var/mail/kurt', 'SSH_CONNECTION': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 fe80::221:91ff:fe19:9a33%eth2 22', 'COMP_WORDBREAKS': ' \t\n"\'><;|&(:', 'SHLVL': '1', 'USER': 'kurt', 'XDG_SESSION_ID': '22908', 'TERM': 'xterm-256color', 'XDG_SESSION_COOKIE': '88a59bc10922466569b1836749f6f6e5-1523740890.184925-315014840', 'LOGNAME': 'kurt', '_': '/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANG': 'en_US.UTF-8', 'PWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux/ettus-e300-2017.3', 'SHELL': '/bin/bash', 'BB_ENV_EXTRAWHITE': 'ALL_PROXY BBPATH_EXTRA BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PATH': '/srv/raid/code/sdr/e300-oe-build/oe-core/scripts:/srv/raid/code/sdr/e300-oe-build/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'}, ['/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'virtual/kernel']]
+Running command ['getVariable', 'BBINCLUDELOGS']
+Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+Running command ['getSetVariable', 'BB_CONSOLELOG']
+Running command ['getUIHandlerNum']
+Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+Running command ['getVariable', 'BB_DEFAULT_TASK']
+Running command ['setConfig', 'cmd', 'build']
+Running command ['buildTargets', ['virtual/kernel'], 'build']
+Connecting Client
+Disconnecting Client
+No timeout, exiting.
+Exiting
+--- Starting bitbake server pid 28791 at 2018-04-15 17:21:34.513240 ---
+Started bitbake server pid 28791
+DEBUG: Found bblayers.conf (/srv/raid/code/sdr/e300-oe-build/build/conf/bblayers.conf)
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/meta
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e100-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e300-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/common
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-contrib
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-oe
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-networking
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-python
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-filesystems
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services/meta-openstack
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-sdr
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt5
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt4
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:740: including conf/abi_version.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:741: including conf/site.conf
+DEBUG: CONF file 'conf/site.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:742: including conf/auto.conf
+DEBUG: CONF file 'conf/auto.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:743: including conf/local.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:744: including conf/multiconfig/default.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:745: including conf/machine/ettus-e3xx-sg3.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e3xx-sg3.conf:1: including conf/machine/ettus-e300.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:8: including ettus-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-zynq.inc:6: including conf/machine/include/tune-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:4: including conf/machine/include/tune-cortexa9.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/tune-cortexa9.inc:3: including conf/machine/include/arm/arch-armv7a.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:8: including conf/machine/include/arm/arch-armv6.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv6.inc:8: including conf/machine/include/arm/arch-armv5-dsp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5-dsp.inc:4: including conf/machine/include/arm/arch-armv5.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:8: including conf/machine/include/arm/arch-armv4.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:15: including conf/machine/include/arm/arch-arm.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:16: including conf/machine/include/arm/feature-arm-thumb.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:9: including conf/machine/include/arm/feature-arm-vfp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:9: including conf/machine/include/arm/feature-arm-neon.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:5: including conf/machine/include/soc-family.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:9: including conf/machine/include/machine-xilinx-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:10: including conf/machine/include/machine-xilinx-board.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:746: including conf/machine-sdk/x86_64.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:747: including conf/distro/nodistro.conf
+DEBUG: CONF file 'conf/distro/nodistro.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:748: including conf/distro/defaultsetup.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:1: including conf/distro/include/default-providers.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:2: including conf/distro/include/default-versions.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:3: including conf/distro/include/default-distrovars.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:4: including conf/distro/include/world-broken.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:7: including conf/distro/include/tcmode-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/include/tcmode-default.inc:71: including conf/distro/include/as-needed.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:10: including conf/distro/include/tclibc-glibc.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:12: including conf/distro/include/uninative-flags.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:749: including conf/documentation.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:750: including conf/licenses.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:751: including conf/sanity.conf
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:4)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/terminal.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/staging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/mirrors.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:7)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utils.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:8)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utility-tasks.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:9)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/metadata_scm.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:10)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/logging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass:1)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/packagedata.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:41)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/chrpath.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:42)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/insane.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:45)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/buildstats.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/linuxloader.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/rm_work.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/debian.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/devshell.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sstate.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/license.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/remove-libtool.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/blacklist.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Clearing SRCREV cache due to cache policy of: clear
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/local_file_checksum_cache.dat'
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/bb_codeparser.dat'
+Entering server connection loop
+Accepting [<socket.socket fd=7, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=bitbake.sock>]
+Connecting Client
+Running command ['setFeatures', [2]]
+Running command ['updateConfig', {'server_timeout': None, 'dry_run': False, 'abort': True, 'postfile': [], 'extra_assume_provided': [], 'invalidate_stamp': None, 'debug_domains': [], 'debug': 0, 'verbose': False, 'profile': False, 'dump_signatures': [], 'force': False, 'prefile': []}, {'SSH_TTY': '/dev/pts/0', 'COMP_WORDBREAKS': ' \t\n"\'><;|&(:', 'SSH_CLIENT': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 22', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'HOME': '/home/kurt', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'PWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux/ettus-e300-2017.3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'OLDPWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux', 'USER': 'kurt', 'HISTCONTROL': 'ignoreboth', 'XDG_SESSION_ID': '22908', 'TERM': 'xterm-256color', '_': '/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'MAIL': '/var/mail/kurt', 'LC_ALL': 'en_US.UTF-8', 'BBPATH': '/srv/raid/code/sdr/e300-oe-build/build', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XDG_SESSION_COOKIE': '88a59bc10922466569b1836749f6f6e5-1523740890.184925-315014840', 'LOGNAME': 'kurt', 'BUILDDIR': '/srv/raid/code/sdr/e300-oe-build/build', 'SHELL': '/bin/bash', 'LANG': 'en_US.UTF-8', 'BB_ENV_EXTRAWHITE': 'ALL_PROXY BBPATH_EXTRA BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'PATH': '/srv/raid/code/sdr/e300-oe-build/oe-core/scripts:/srv/raid/code/sdr/e300-oe-build/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'SHLVL': '1', 'SSH_CONNECTION': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 fe80::221:91ff:fe19:9a33%eth2 22'}, ['/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'package-index']]
+Running command ['getVariable', 'BBINCLUDELOGS']
+Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+Running command ['getSetVariable', 'BB_CONSOLELOG']
+Running command ['getUIHandlerNum']
+Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+Running command ['getVariable', 'BB_DEFAULT_TASK']
+Running command ['setConfig', 'cmd', 'build']
+Running command ['buildTargets', ['package-index'], 'build']
+Connecting Client
+Disconnecting Client
+No timeout, exiting.
+Exiting
+--- Starting bitbake server pid 29102 at 2018-04-15 17:29:29.491898 ---
+Started bitbake server pid 29102
+DEBUG: Found bblayers.conf (/srv/raid/code/sdr/e300-oe-build/build/conf/bblayers.conf)
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/meta
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e100-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e300-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/common
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-contrib
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-oe
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-networking
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-python
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-filesystems
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services/meta-openstack
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-sdr
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt5
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt4
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:740: including conf/abi_version.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:741: including conf/site.conf
+DEBUG: CONF file 'conf/site.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:742: including conf/auto.conf
+DEBUG: CONF file 'conf/auto.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:743: including conf/local.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:744: including conf/multiconfig/default.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:745: including conf/machine/ettus-e3xx-sg3.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e3xx-sg3.conf:1: including conf/machine/ettus-e300.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:8: including ettus-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-zynq.inc:6: including conf/machine/include/tune-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:4: including conf/machine/include/tune-cortexa9.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/tune-cortexa9.inc:3: including conf/machine/include/arm/arch-armv7a.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:8: including conf/machine/include/arm/arch-armv6.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv6.inc:8: including conf/machine/include/arm/arch-armv5-dsp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5-dsp.inc:4: including conf/machine/include/arm/arch-armv5.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:8: including conf/machine/include/arm/arch-armv4.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:15: including conf/machine/include/arm/arch-arm.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:16: including conf/machine/include/arm/feature-arm-thumb.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:9: including conf/machine/include/arm/feature-arm-vfp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:9: including conf/machine/include/arm/feature-arm-neon.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:5: including conf/machine/include/soc-family.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:9: including conf/machine/include/machine-xilinx-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:10: including conf/machine/include/machine-xilinx-board.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:746: including conf/machine-sdk/x86_64.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:747: including conf/distro/nodistro.conf
+DEBUG: CONF file 'conf/distro/nodistro.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:748: including conf/distro/defaultsetup.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:1: including conf/distro/include/default-providers.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:2: including conf/distro/include/default-versions.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:3: including conf/distro/include/default-distrovars.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:4: including conf/distro/include/world-broken.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:7: including conf/distro/include/tcmode-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/include/tcmode-default.inc:71: including conf/distro/include/as-needed.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:10: including conf/distro/include/tclibc-glibc.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:12: including conf/distro/include/uninative-flags.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:749: including conf/documentation.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:750: including conf/licenses.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:751: including conf/sanity.conf
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:4)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/terminal.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/staging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/mirrors.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:7)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utils.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:8)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utility-tasks.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:9)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/metadata_scm.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:10)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/logging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass:1)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/packagedata.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:41)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/chrpath.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:42)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/insane.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:45)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/buildstats.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/linuxloader.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/rm_work.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/debian.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/devshell.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sstate.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/license.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/remove-libtool.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/blacklist.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Clearing SRCREV cache due to cache policy of: clear
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/local_file_checksum_cache.dat'
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/bb_codeparser.dat'
+Entering server connection loop
+Accepting [<socket.socket fd=7, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=bitbake.sock>]
+Connecting Client
+Running command ['setFeatures', [2]]
+Running command ['updateConfig', {'prefile': [], 'force': False, 'debug_domains': [], 'server_timeout': None, 'extra_assume_provided': [], 'profile': False, 'invalidate_stamp': None, 'dry_run': False, 'postfile': [], 'dump_signatures': [], 'abort': True, 'debug': 0, 'verbose': False}, {'PWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux/ettus-e300-2017.3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'LANG': 'en_US.UTF-8', 'USER': 'kurt', 'SHLVL': '1', 'OLDPWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux', 'PATH': '/srv/raid/code/sdr/e300-oe-build/oe-core/scripts:/srv/raid/code/sdr/e300-oe-build/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'MAIL': '/var/mail/kurt', 'LOGNAME': 'kurt', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'SSH_CLIENT': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 22', 'COMP_WORDBREAKS': ' \t\n"\'><;|&(:', 'XDG_RUNTIME_DIR': '/run/user/1000', 'SSH_TTY': '/dev/pts/0', 'HOME': '/home/kurt', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'XDG_SESSION_ID': '22908', 'TERM': 'xterm-256color', 'BBPATH': '/srv/raid/code/sdr/e300-oe-build/build', 'BB_ENV_EXTRAWHITE': 'ALL_PROXY BBPATH_EXTRA BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'SSH_CONNECTION': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 fe80::221:91ff:fe19:9a33%eth2 22', 'LC_ALL': 'en_US.UTF-8', '_': '/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'XDG_SESSION_COOKIE': '88a59bc10922466569b1836749f6f6e5-1523740890.184925-315014840', 'HISTCONTROL': 'ignoreboth', 'BUILDDIR': '/srv/raid/code/sdr/e300-oe-build/build', 'SHELL': '/bin/bash'}, ['/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'virtual/kernel']]
+Running command ['getVariable', 'BBINCLUDELOGS']
+Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+Running command ['getSetVariable', 'BB_CONSOLELOG']
+Running command ['getUIHandlerNum']
+Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+Running command ['getVariable', 'BB_DEFAULT_TASK']
+Running command ['setConfig', 'cmd', 'build']
+Running command ['buildTargets', ['virtual/kernel'], 'build']
+Connecting Client
+Disconnecting Client
+No timeout, exiting.
+Exiting
+--- Starting bitbake server pid 31903 at 2018-04-15 17:53:08.086090 ---
+Started bitbake server pid 31903
+DEBUG: Found bblayers.conf (/srv/raid/code/sdr/e300-oe-build/build/conf/bblayers.conf)
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/meta
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e100-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/e300-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/common
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-bsp
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-xilinx/meta-xilinx-contrib
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-oe
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-networking
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-python
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-oe/meta-filesystems
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-cloud-services/meta-openstack
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-sdr
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt5
+DEBUG: Adding layer /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-qt4
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:740: including conf/abi_version.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:741: including conf/site.conf
+DEBUG: CONF file 'conf/site.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:742: including conf/auto.conf
+DEBUG: CONF file 'conf/auto.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:743: including conf/local.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:744: including conf/multiconfig/default.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:745: including conf/machine/ettus-e3xx-sg3.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e3xx-sg3.conf:1: including conf/machine/ettus-e300.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:8: including ettus-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-zynq.inc:6: including conf/machine/include/tune-zynq.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:4: including conf/machine/include/tune-cortexa9.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/tune-cortexa9.inc:3: including conf/machine/include/arm/arch-armv7a.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:8: including conf/machine/include/arm/arch-armv6.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv6.inc:8: including conf/machine/include/arm/arch-armv5-dsp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5-dsp.inc:4: including conf/machine/include/arm/arch-armv5.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:8: including conf/machine/include/arm/arch-armv4.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:15: including conf/machine/include/arm/arch-arm.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv4.inc:16: including conf/machine/include/arm/feature-arm-thumb.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv5.inc:9: including conf/machine/include/arm/feature-arm-vfp.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/machine/include/arm/arch-armv7a.inc:9: including conf/machine/include/arm/feature-arm-neon.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/include/tune-zynq.inc:5: including conf/machine/include/soc-family.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:9: including conf/machine/include/machine-xilinx-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/../meta-ettus/conf/machine/ettus-e300.inc:10: including conf/machine/include/machine-xilinx-board.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:746: including conf/machine-sdk/x86_64.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:747: including conf/distro/nodistro.conf
+DEBUG: CONF file 'conf/distro/nodistro.conf' not found
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:748: including conf/distro/defaultsetup.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:1: including conf/distro/include/default-providers.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:2: including conf/distro/include/default-versions.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:3: including conf/distro/include/default-distrovars.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:4: including conf/distro/include/world-broken.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:7: including conf/distro/include/tcmode-default.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/include/tcmode-default.inc:71: including conf/distro/include/as-needed.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:10: including conf/distro/include/tclibc-glibc.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/distro/defaultsetup.conf:12: including conf/distro/include/uninative-flags.inc
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:749: including conf/documentation.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:750: including conf/licenses.conf
+DEBUG: CONF /srv/raid/code/sdr/e300-oe-build/oe-core/meta/conf/bitbake.conf:751: including conf/sanity.conf
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:4)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/terminal.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/patch.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/staging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/mirrors.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:7)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utils.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:8)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/utility-tasks.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:9)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/metadata_scm.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:10)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/logging.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/base.bbclass:11)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package_ipk.bbclass:1)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/packagedata.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:41)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/chrpath.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:42)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/insane.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/package.bbclass:45)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/buildstats.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/linuxloader.bbclass (from /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/image-mklibs.bbclass:5)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/rm_work.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/debian.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/devshell.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sstate.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/license.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/remove-libtool.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/blacklist.bbclass (from configuration INHERITs:0)
+DEBUG: Inheriting /srv/raid/code/sdr/e300-oe-build/oe-core/meta/classes/sanity.bbclass (from configuration INHERITs:0)
+DEBUG: Clearing SRCREV cache due to cache policy of: clear
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/local_file_checksum_cache.dat'
+DEBUG: Using cache in '/srv/raid/code/sdr/e300-oe-build/build/cache/bb_codeparser.dat'
+Entering server connection loop
+Accepting [<socket.socket fd=7, family=AddressFamily.AF_UNIX, type=SocketKind.SOCK_STREAM, proto=0, laddr=bitbake.sock>]
+Connecting Client
+Running command ['setFeatures', [2]]
+Running command ['updateConfig', {'dry_run': False, 'extra_assume_provided': [], 'debug_domains': [], 'abort': True, 'prefile': [], 'verbose': False, 'server_timeout': None, 'dump_signatures': [], 'profile': False, 'force': False, 'invalidate_stamp': None, 'debug': 0, 'postfile': []}, {'LANG': 'en_US.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', '_': '/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'MAIL': '/var/mail/kurt', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'BB_ENV_EXTRAWHITE': 'ALL_PROXY BBPATH_EXTRA BB_NO_NETWORK BB_NUMBER_THREADS BB_SETSCENE_ENFORCE BB_SRCREV_POLICY DISTRO FTPS_PROXY FTP_PROXY GIT_PROXY_COMMAND HTTPS_PROXY HTTP_PROXY MACHINE NO_PROXY PARALLEL_MAKE SCREENDIR SDKMACHINE SOCKS5_PASSWD SOCKS5_USER SSH_AGENT_PID SSH_AUTH_SOCK STAMPS_DIR TCLIBC TCMODE all_proxy ftp_proxy ftps_proxy http_proxy https_proxy no_proxy ', 'LOGNAME': 'kurt', 'BBPATH': '/srv/raid/code/sdr/e300-oe-build/build', 'HOME': '/home/kurt', 'SSH_CLIENT': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 22', 'SSH_CONNECTION': 'fe80::cc5:3bfd:2a22:7c7%eth2 62607 fe80::221:91ff:fe19:9a33%eth2 22', 'SHLVL': '1', 'PWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux/ettus-e300-2017.3', 'LC_ALL': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'BUILDDIR': '/srv/raid/code/sdr/e300-oe-build/build', 'OLDPWD': '/srv/raid/code/sdr/e300-oe-build/meta-ettus/recipes-kernel/linux', 'XDG_SESSION_COOKIE': '88a59bc10922466569b1836749f6f6e5-1523740890.184925-315014840', 'SSH_TTY': '/dev/pts/0', 'USER': 'kurt', 'TERM': 'xterm-256color', 'HISTCONTROL': 'ignoreboth', 'SHELL': '/bin/bash', 'PATH': '/srv/raid/code/sdr/e300-oe-build/oe-core/scripts:/srv/raid/code/sdr/e300-oe-build/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games', 'COMP_WORDBREAKS': ' \t\n"\'><;|&(:', 'XDG_SESSION_ID': '22908'}, ['/srv/raid/code/sdr/e300-oe-build/bitbake/bin/bitbake', 'package-index']]
+Running command ['getVariable', 'BBINCLUDELOGS']
+Running command ['getVariable', 'BBINCLUDELOGS_LINES']
+Running command ['getSetVariable', 'BB_CONSOLELOG']
+Running command ['getUIHandlerNum']
+Running command ['setEventMask', 1, 20, {}, ['bb.runqueue.runQueueExitWait', 'bb.event.LogExecTTY', 'logging.LogRecord', 'bb.build.TaskFailed', 'bb.build.TaskBase', 'bb.event.ParseStarted', 'bb.event.ParseProgress', 'bb.event.ParseCompleted', 'bb.event.CacheLoadStarted', 'bb.event.CacheLoadProgress', 'bb.event.CacheLoadCompleted', 'bb.command.CommandFailed', 'bb.command.CommandExit', 'bb.command.CommandCompleted', 'bb.cooker.CookerExit', 'bb.event.MultipleProviders', 'bb.event.NoProvider', 'bb.runqueue.sceneQueueTaskStarted', 'bb.runqueue.runQueueTaskStarted', 'bb.runqueue.runQueueTaskFailed', 'bb.runqueue.sceneQueueTaskFailed', 'bb.event.BuildBase', 'bb.build.TaskStarted', 'bb.build.TaskSucceeded', 'bb.build.TaskFailedSilent', 'bb.build.TaskProgress', 'bb.event.ProcessStarted', 'bb.event.ProcessProgress', 'bb.event.ProcessFinished']]
+Running command ['getVariable', 'BB_DEFAULT_TASK']
+Running command ['setConfig', 'cmd', 'build']
+Running command ['buildTargets', ['package-index'], 'build']
+Connecting Client
+Disconnecting Client
+No timeout, exiting.
+Exiting

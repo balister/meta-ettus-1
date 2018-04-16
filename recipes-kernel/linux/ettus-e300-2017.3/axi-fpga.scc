@@ -1,0 +1,6 @@
+define KFEATURE_DESCRIPTION "Support for AXI fpga interface testing"
+define KFEATURE_COMPATIBILITY board
+
+patch 0001-axi_fpga-Add-a-driver-to-test-AXI-interface-to-the-f.patch
+kconf hardware axi-fpga.cfg
+
