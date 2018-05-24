@@ -27,3 +27,7 @@ MACHINE_EXTRA_RRECOMMENDS = "kernel-modules acpid rtimulib rtimulib-conf \
                             "
 
 IMAGE_BOOT_FILES += "boot.bin fpga.bin"
+
+IMAGE_FSTYPES += "wic wic.bmap"
+WKS_FILE ?= "e300-sd.wks"
+
