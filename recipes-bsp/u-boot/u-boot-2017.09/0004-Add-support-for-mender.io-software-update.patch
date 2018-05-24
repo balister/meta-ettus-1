@@ -1,15 +1,15 @@
-From ee22164a7bfa89ee4664c06a917d1c05895b7848 Mon Sep 17 00:00:00 2001
+From 93510dbac8a477f288f2b2e7e4f725c6e6ddcde2 Mon Sep 17 00:00:00 2001
 From: Philip Balister <philip@opensdr.com>
 Date: Sat, 7 Apr 2018 16:29:43 -0700
 Subject: [PATCH 4/4] Add support for mender.io software update.
 
 ---
  include/configs/zynq-common.h      | 12 ------------
- include/configs/zynq_e3xx_common.h |  5 +++++
- 2 files changed, 5 insertions(+), 12 deletions(-)
+ include/configs/zynq_e3xx_common.h |  4 ++++
+ 2 files changed, 4 insertions(+), 12 deletions(-)
 
 diff --git a/include/configs/zynq-common.h b/include/configs/zynq-common.h
-index b9599c7..a42dea6 100644
+index b9599c73a6..a42dea63e4 100644
 --- a/include/configs/zynq-common.h
 +++ b/include/configs/zynq-common.h
 @@ -155,18 +155,6 @@
@@ -32,7 +32,7 @@ index b9599c7..a42dea6 100644
  #define CONFIG_PREBOOT
  
 diff --git a/include/configs/zynq_e3xx_common.h b/include/configs/zynq_e3xx_common.h
-index 299dbc2..471dcdf 100644
+index 950b01eb47..716ba1293c 100644
 --- a/include/configs/zynq_e3xx_common.h
 +++ b/include/configs/zynq_e3xx_common.h
 @@ -9,6 +9,10 @@
@@ -44,8 +44,8 @@ index 299dbc2..471dcdf 100644
 +#define CONFIG_BOOTCOUNT_ENV
 +
  #define CONFIG_ZYNQ_E3XX_MEM_TEST
- #define CONFIG_ZYNQ_E3XX_MEM_TEST_START CONFIG_SYS_SDRAM_BASE
+ #define CONFIG_ZYNQ_E3XX_MEM_TEST_START 0
  #define CONFIG_ZYNQ_E3XX_MEM_TEST_SIZE 0x00001000
 -- 
-2.7.4
+2.14.3
 
