@@ -11,7 +11,8 @@
 # the option is a question of removing the # character and making any change to the
 # variable as required.
 
-DISTRO="Alchemy"
+#DISTRO="Alchemy"
+DISTRO_FEATURES_append = " opengl x11"
 
 BBMASK = "rtimulib gqrx"
 MACHINE_EXTRA_RRECOMMENDS_remove_ettus-e300 = "rtimulib rtimulib-conf"
@@ -104,6 +105,7 @@ MACHINE ??= "ettus-e3xx-sg1"
 #  - 'package_rpm' for rpm style packages
 # E.g.: PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # We default to ipk:
+PACKAGE_CLASSES ?= "package_ipk"
 
 #
 # SDK/ADT target architecture
@@ -136,6 +138,7 @@ MACHINE ??= "ettus-e3xx-sg1"
 # There are other application targets that can be used here too, see
 # meta/classes/image.bbclass and meta/classes/core-image.bbclass for more details.
 # We default to enabling the debugging tweaks.
+EXTRA_IMAGE_FEATURES = "debug-tweaks tools-profile tools-sdk dev-pkgs"
 
 IMAGE_FSTYPES = "tar.gz"
 
@@ -151,6 +154,7 @@ IMAGE_FSTYPES = "tar.gz"
 #   - 'image-swab' to perform host system intrusion detection
 # NOTE: if listing mklibs & prelink both, then make sure mklibs is before prelink
 # NOTE: mklibs also needs to be explicitly enabled for a given image, see local.conf.extended
+USER_CLASSES ?= "buildstats buildhistory image-buildinfo image-mklibs rm_work"
 
 RM_WORK_EXCLUDE = "base-dev-image uhd-dev-image gnuradio-dev-image \
                    gnuradio-demo-image gnuradio-video-demo-image \
