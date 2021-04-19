@@ -5,7 +5,8 @@ LICENSE = "GPLv3+"
 DEPENDS = "git-native python3-mako-native boost \
            ncurses udev python3-requests \
            python3-setuptools-native"
-RDEPENDS_${PN} += "python3-core python3-requests"
+RDEPENDS_${PN} += "python3-core python3-requests \
+                   "
 RDEPENDS_${PN}-tests = "${PN}"
 RDEPENDS_${PN}-examples = "${PN}"
 RDEPENDS_${PYTHON_PN}-${PN} = "${PN} python3-numpy"
@@ -41,7 +42,7 @@ PACKAGECONFIG[n230] = "-DENABLE_N230=ON,-DENABLE_N230=OFF, "
 PACKAGECONFIG[usrp1] = "-DENABLE_USRP1=ON,-DENABLE_USRP1=OFF, libusb1"
 PACKAGECONFIG[usrp2] = "-DENABLE_USRP2=ON,-DENABLE_USRP2=OFF, "
 PACKAGECONFIG[x300] = "-DENABLE_X300=ON,-DENABLE_X300=OFF, "
-PACKAGECONFIG[mpmd] = "-DENABLE_MPMD=ON,-DENABLE_MPMD=OFF"
+PACKAGECONFIG[mpmd] = "-DENABLE_MPMD=ON,-DENABLE_MPMD=OFFi, mpmd, mpmd"
 PACKAGECONFIG[python] = "-DENABLE_PYTHON_API=ON,-DENABLE_PYTHON_API=OFF, python3-numpy-native"
 
 EXTRA_OECMAKE = "-DENABLE_LIBUHD=TRUE \
